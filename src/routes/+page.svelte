@@ -11,7 +11,7 @@
 	function processWorksheet(worksheet) {
 		let data = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 		for (let i = 0; i < data.length; i++) {
-			data[i].push('');
+			data[i].push(1);
 			data[i].push('');
 		}
 		return data;
@@ -150,7 +150,7 @@
 									<td>
 										<input
 											type="number"
-											value={row[2]}
+											value={row[9]}
 											on:change={(e) => handlePackageInput(e, i)}
 											class="form-control"
 										/>
@@ -158,7 +158,7 @@
 									<td>
 										<input
 											type="number"
-											value={row[3]}
+											value={row[10]}
 											on:change={(e) => handleWeightInput(e, i)}
 											class="form-control"
 										/>
@@ -183,7 +183,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		height: 200px;
+		height: 125px;
 		border: 2px dashed #ccc;
 		border-radius: 10px;
 	}
